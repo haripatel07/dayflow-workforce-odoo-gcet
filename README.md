@@ -1,4 +1,4 @@
-# 🧭 Dayflow - Human Resource Management System (HRMS)
+#  Dayflow - Human Resource Management System (HRMS)
 
 <div align="center">
 
@@ -11,13 +11,13 @@
 [![React](https://img.shields.io/badge/React-19.x-blue.svg)](https://reactjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-6.x-brightgreen.svg)](https://www.mongodb.com/)
 
-[Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [API Docs](#-api-documentation) • [Screenshots](#-screenshots)
+[Features](#-features)  [Installation](#-installation)  [Usage](#-usage)  [API Docs](#-api-documentation)  [Screenshots](#-screenshots)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+##  Table of Contents
 
 - [About](#-about)
 - [Problem Statement](#-problem-statement)
@@ -35,93 +35,93 @@
 
 ---
 
-## 📌 About
+##  About
 
 **Dayflow** is a modern, full-stack Human Resource Management System (HRMS) designed to digitize and automate core HR operations for organizations of all sizes. Built with a focus on simplicity, security, and scalability, Dayflow provides a centralized platform for managing employees, tracking attendance, processing leave requests, and maintaining payroll visibility.
 
 **Key Highlights:**
-- 🎯 **Role-Based Access Control** - Secure multi-role architecture (Admin, HR, Employee)
-- 🏢 **Multi-Company Support** - Complete data isolation between organizations
-- 🤖 **AI-Powered Assistant** - RAG-based chatbot using Groq LLaMA 3.3 70B
-- 📊 **Real-Time Dashboard** - Comprehensive analytics and activity tracking
-- 🔒 **Enterprise Security** - JWT authentication, password encryption, CORS protection
-- 💼 **Professional UI** - Odoo-inspired design with smooth animations
+-  **Role-Based Access Control** - Secure multi-role architecture (Admin, HR, Employee)
+-  **Multi-Company Support** - Complete data isolation between organizations
+-  **AI-Powered Assistant** - RAG-based chatbot using Groq LLaMA 3.3 70B
+-  **Real-Time Dashboard** - Comprehensive analytics and activity tracking
+-  **Enterprise Security** - JWT authentication, password encryption, CORS protection
+-  **Professional UI** - Odoo-inspired design with smooth animations
 
 ---
 
-## 🎯 Problem Statement
+##  Problem Statement
 
 Organizations struggle with:
-- ❌ Manual, fragmented, and error-prone HR processes
-- ❌ Inefficient employee onboarding and management
-- ❌ Inaccurate attendance tracking and leave approvals
-- ❌ Lack of payroll transparency and visibility
-- ❌ Poor role-based access control and data security
+-  Manual, fragmented, and error-prone HR processes
+-  Inefficient employee onboarding and management
+-  Inaccurate attendance tracking and leave approvals
+-  Lack of payroll transparency and visibility
+-  Poor role-based access control and data security
 
 **Dayflow solves these problems by providing:**
-- ✅ Automated, centralized HR operations
-- ✅ Streamlined employee lifecycle management
-- ✅ Digital attendance and leave management
-- ✅ Transparent salary structures with auto-calculation
-- ✅ Secure, role-based data access and audit trails
+-  Automated, centralized HR operations
+-  Streamlined employee lifecycle management
+-  Digital attendance and leave management
+-  Transparent salary structures with auto-calculation
+-  Secure, role-based data access and audit trails
 
 ---
 
-## ✨ Features
+##  Features
 
-### 🔐 Authentication & Authorization
+###  Authentication & Authorization
 - **Secure Sign Up** - Organization registration with admin account creation
 - **JWT Authentication** - Token-based secure login with 30-day validity
 - **Role-Based Access** - Three-tier system (Admin, HR, Employee)
 - **Multi-Company Isolation** - Complete data segregation between organizations
 
-### 👥 Employee Management
+###  Employee Management
 - **Smart Employee Codes** - Auto-generated unique IDs (e.g., `DAOM20260001`)
 - **Comprehensive Profiles** - Personal info, work details, bank info, salary breakdown
 - **Team Directory** - Searchable grid with status indicators (Present/Leave/Absent)
 - **Excel Export** - Bulk data export for reporting and compliance
 - **CRUD Operations** - Full create, read, update, delete capabilities (Admin only)
 
-### ⏰ Attendance Tracking
+###  Attendance Tracking
 - **Real-Time Check-In/Out** - One-click clock management with timestamp
 - **Work Hours Calculation** - Automatic duration tracking
 - **Monthly Statistics** - Present days, leaves, and working days summary
 - **Admin Dashboard** - View all employee attendance across company
 - **Edit & Delete** - Admin can correct attendance errors (NEW)
 
-### 🏖️ Leave Management
+###  Leave Management
 - **Leave Application** - Request Paid, Sick, or Unpaid time off
 - **Approval Workflow** - Admin/HR can approve or reject requests
 - **Leave Balance** - Automatic calculation based on tenure (2 leaves/month, 24/year)
 - **Status Tracking** - Real-time view of Pending, Approved, Rejected leaves
 - **Delete Requests** - Users can cancel pending leave applications (NEW)
 
-### 💰 Payroll Management
+###  Payroll Management
 - **Auto-Calculated Salary** - Smart breakdown based on gross wage
   - Basic: 50% of gross
   - HRA: 25% of gross (50% of basic)
-  - Standard Allowance: ₹4,167 fixed
+  - Standard Allowance: 4,167 fixed
   - Performance Bonus: 8.33% of basic
   - Travel Allowance: 8.33% of basic
   - PF Deduction: 12% of basic
-  - Professional Tax: ₹200 fixed
+  - Professional Tax: 200 fixed
 - **Salary Editor** - Admin can modify components with live updates
 - **Read-Only View** - Employees can view their salary structure
 
-### 📢 Announcements (NEW)
+###  Announcements (NEW)
 - **Create Announcements** - Admin/HR can broadcast company-wide messages
 - **Color-Coded Types** - Info (Blue), Warning (Yellow), Success (Green), Important (Red)
 - **Auto-Expiry** - Optional expiration date for time-sensitive notices
 - **Company-Specific** - Only visible to same organization members
 
-### 🤖 AI Chatbot
+###  AI Chatbot
 - **RAG-Powered** - Retrieval Augmented Generation with user context
 - **Groq Integration** - LLaMA 3.3 70B model for intelligent responses
 - **Context-Aware** - Knows user profile, attendance status, leave history
 - **Fallback Engine** - Heuristic responses when API unavailable
 - **HR-Focused** - Trained specifically for HR-related queries
 
-### 📊 Dashboard & Analytics
+###  Dashboard & Analytics
 - **Key Metrics** - Attendance count, leave balance, pending tasks, total employees
 - **Recent Activity** - Timeline of check-ins/outs and leave requests
 - **Announcements Board** - Company-wide notifications and updates
@@ -129,7 +129,7 @@ Organizations struggle with:
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 ### Backend
 ```
@@ -157,43 +157,43 @@ XLSX            v0.18       - Excel export
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### System Design
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                     CLIENT (React SPA)                       │
-│  ┌─────────┐  ┌─────────┐  ┌─────────┐  ┌──────────┐      │
-│  │Dashboard│  │Employees│  │ Leaves  │  │Attendance│      │
-│  └────┬────┘  └────┬────┘  └────┬────┘  └────┬─────┘      │
-└───────┼───────────┼─────────────┼────────────┼─────────────┘
-        │           │             │            │
-        └───────────┴─────────────┴────────────┘
-                    │ HTTPS/REST
-        ┌───────────▼─────────────────────────────────────────┐
-        │              API GATEWAY (Express)                   │
-        │  ┌────────────┐  ┌────────────┐  ┌────────────┐   │
-        │  │   Auth     │  │  Protected │  │   Admin    │   │
-        │  │Middleware  │  │  Routes    │  │Middleware  │   │
-        │  └────────────┘  └────────────┘  └────────────┘   │
-        └───────────┬──────────────────────────────────────────┘
-                    │
-        ┌───────────▼─────────────────────────────────────────┐
-        │              BUSINESS LOGIC                          │
-        │  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐  ┌──────┐│
-        │  │ User │  │Attend│  │Leave │  │ Chat │  │Announ││
-        │  │ Ctrl │  │ Ctrl │  │ Ctrl │  │ Ctrl │  │ Ctrl ││
-        │  └──────┘  └──────┘  └──────┘  └──────┘  └──────┘│
-        └───────────┬──────────────────────────────────────────┘
-                    │
-        ┌───────────▼─────────────────────────────────────────┐
-        │                DATABASE LAYER                        │
-        │  ┌────────────┐  ┌────────────┐  ┌────────────┐   │
-        │  │    User    │  │ Attendance │  │   Leave    │   │
-        │  │   Model    │  │   Model    │  │   Model    │   │
-        │  └────────────┘  └────────────┘  └────────────┘   │
-        │        MongoDB with Mongoose ODM                    │
-        └──────────────────────────────────────────────────────┘
+
+                     CLIENT (React SPA)                       
+              
+  Dashboard  Employees   Leaves    Attendance      
+              
+
+                                            
+        
+                     HTTPS/REST
+        
+                      API GATEWAY (Express)                   
+                 
+             Auth         Protected      Admin       
+          Middleware      Routes      Middleware     
+                 
+        
+                    
+        
+                      BUSINESS LOGIC                          
+                  
+           User   Attend  Leave    Chat   Announ
+           Ctrl    Ctrl    Ctrl    Ctrl    Ctrl 
+                  
+        
+                    
+        
+                        DATABASE LAYER                        
+                 
+              User       Attendance      Leave       
+             Model         Model         Model       
+                 
+                MongoDB with Mongoose ODM                    
+        
 ```
 
 ### Data Flow
@@ -205,7 +205,7 @@ XLSX            v0.18       - Excel export
 
 ---
 
-## 📦 Installation
+##  Installation
 
 ### Prerequisites
 - Node.js v18+ installed
@@ -249,7 +249,7 @@ This creates 50 sample employees with realistic data for testing.
 
 ---
 
-## ⚙️ Configuration
+##  Configuration
 
 ### Environment Variables
 
@@ -284,7 +284,7 @@ app.use(cors({
 
 ---
 
-## 🚀 Usage
+##  Usage
 
 ### Start Backend Server
 ```bash
@@ -310,7 +310,7 @@ Optimized files in `frontend/dist/`
 
 ---
 
-## 📚 API Documentation
+##  API Documentation
 
 Complete API documentation available at: [docs/backend_api.txt](docs/backend_api.txt)
 
@@ -367,7 +367,7 @@ POST   /api/chat                   # Send message
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 ### Dashboard
 ![Dashboard](docs/screenshots/dashboard.png)
@@ -391,27 +391,27 @@ POST   /api/chat                   # Send message
 
 ---
 
-## 🔒 Security
+##  Security
 
 ### Implemented Security Measures
 
-✅ **Authentication**
+ **Authentication**
 - JWT-based token authentication (30-day expiry)
 - Bcrypt password hashing (10 salt rounds)
 - Secure password validation (min 6 characters)
 
-✅ **Authorization**
+ **Authorization**
 - Role-based access control (Admin, HR, Employee)
 - Company-based data isolation
 - Protected routes with middleware verification
 
-✅ **Data Protection**
+ **Data Protection**
 - Company-specific filtering on all queries
 - Ownership verification before updates/deletes
 - Prevention of role escalation attacks
 - Input validation and sanitization
 
-✅ **API Security**
+ **API Security**
 - CORS protection with origin whitelist
 - Rate limiting on sensitive endpoints
 - SQL injection prevention via Mongoose
@@ -420,24 +420,24 @@ POST   /api/chat                   # Send message
 ### Security Best Practices
 
 ```javascript
-// ✅ DO: Use environment variables
+//  DO: Use environment variables
 const secret = process.env.JWT_SECRET;
 
-// ❌ DON'T: Hardcode secrets
+//  DON'T: Hardcode secrets
 const secret = "mysecretkey123";
 
-// ✅ DO: Validate ownership
+//  DO: Validate ownership
 if (resource.companyName !== user.companyName) {
   return res.status(403).json({ message: 'Not authorized' });
 }
 
-// ❌ DON'T: Trust user input
+//  DON'T: Trust user input
 const data = await Model.find({});  // Returns ALL data
 ```
 
 ---
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions! Please follow these steps:
 
@@ -456,13 +456,13 @@ We welcome contributions! Please follow these steps:
 
 ---
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👥 Team
+##  Team
 
 **Project Lead:** Your Name  
 **Frontend Developer:** Your Name  
@@ -471,7 +471,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Odoo** - Design inspiration
 - **Groq** - AI model provider
@@ -481,21 +481,21 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 Support
+##  Support
 
 For issues, questions, or feature requests:
-- 📧 Email: support@dayflow.com
-- 🐛 Issues: [GitHub Issues](https://github.com/yourusername/dayflow-hrms/issues)
-- 💬 Discussions: [GitHub Discussions](https://github.com/yourusername/dayflow-hrms/discussions)
+-  Email: support@dayflow.com
+-  Issues: [GitHub Issues](https://github.com/yourusername/dayflow-hrms/issues)
+-  Discussions: [GitHub Discussions](https://github.com/yourusername/dayflow-hrms/discussions)
 
 ---
 
 <div align="center">
 
-**Made with ❤️ by Dayflow Team**
+**Made with  by Dayflow Team**
 
-⭐ Star us on GitHub — it motivates us a lot!
+ Star us on GitHub  it motivates us a lot!
 
-[⬆ Back to Top](#-dayflow---human-resource-management-system-hrms)
+[ Back to Top](#-dayflow---human-resource-management-system-hrms)
 
 </div>
