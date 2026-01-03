@@ -1,0 +1,93 @@
+Dayflow SaaS API Documentation
+Version: 1.0.0
+Base URL: http://localhost:5000/api
+
+Authentication:
+All protected routes require a Bearer Token in the Authorization header.
+Header: Authorization: Bearer <token>
+
+--------------------------------------------------------------------------------
+1. AUTHENTICATION & USERS
+--------------------------------------------------------------------------------
+
+POST /api/users/login
+Description: Authenticate user and get JWT token.
+Body: { "email": "admin@dayflow.com", "password": "password123" } 
+      OR { "empCode": "dayflowadmin", "password": "password123" }
+Response: { "_id", "name", "email", "empCode", "role", "token" }
+
+POST /api/users
+Description: Register a new Organization (Admin only initial setup or Public for SaaS).
+Body: { "name": "Om Doe", "email": "Om@co.com", "password": "123", "companyName": "Acme Inc", "phone": "999" }
+Response: { "_id", "name", "email", "role", "token" }
+
+POST /api/users/create (Admin Only)
+Description: Create a new employee under the logged-in admin's organization.
+Body: { "name": "Jane Doe", "email": "jane@co.com", "designation": "Dev", "salary": { "monthly": 50000 } }
+Response: { "message": "User created", "empCode": "...", "tempPassword": "..." }
+
+GET /api/users (Admin Only)
+Description: Get all employees.
+Response: Array of user objects.
+
+GET /api/users/profile
+Description: Get current logged-in user's profile.
+Response: User object with private fields.
+
+PUT /api/users/profile
+Description: Update current user's profile.
+Body: { "phone", "address", "gender", ... }
+Response: Updated User object.
+
+GET /api/users/:id (Admin Only)
+Description: Get a specific user by ID.
+Response: User object.
+
+PUT /api/users/:id (Admin Only)
+Description: Update a specific user (including salary/role).
+Body: { "salary": { "monthly": 60000 }, "designation": "Senior Dev" }
+Response: Updated User object.
+
+--------------------------------------------------------------------------------
+2. ATTENDANCE
+--------------------------------------------------------------------------------
+
+POST /api/attendance/checkin
+Description: Clock in for the day.
+Body: {}
+Response: { "message": "Checked in successfully" }
+
+POST /api/attendance/checkout
+Description: Clock out for the day.
+Body: {}
+Response: { "message": "Checked out successfully" }
+
+GET /api/attendance/my
+Description: Get attendance history for current user.
+Response: Array of attendance records.
+
+GET /api/attendance (Admin Only)
+Description: Get attendance for ALL users.
+Response: Array of attendance records.
+
+--------------------------------------------------------------------------------
+3. LEAVES
+--------------------------------------------------------------------------------
+
+POST /api/leaves
+Description: Apply for leave.
+Body: { "startDate": "2023-10-10", "endDate": "2023-10-12", "reason": "Sick", "type": "Sick Leave" }
+Response: Leave object.
+
+GET /api/leaves/my
+Description: Get leave history for current user.
+Response: Array of leave requests.
+
+GET /api/leaves (Admin Only)
+Description: Get all leave requests across organization.
+Response: Array of leave requests.
+
+PUT /api/leaves/:id
+Description: Approve or Reject a leave request (Admin Only).
+Body: { "status": "Approved" } or { "status": "Rejected" }
+Response: Updated Leave object.

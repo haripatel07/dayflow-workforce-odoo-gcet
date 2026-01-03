@@ -1,68 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Odoo-inspired Modern Palette */
+  --primary-color: #714B67;
+  --primary-hover: #5d3d54;
+  --secondary-color: #017e84;
+  --action-color: #00A09D;
+
+  --background-color: #f6f8fa;
+  --card-bg: #ffffff;
+
+  --text-primary: #111827;
+  --text-secondary: #374151;
+  --text-muted: #6b7280;
+
+  --border-color: #e5e7eb;
+
+  --success: #059669;
+  --warning: #d97706;
+  --error: #dc2626;
+
+  --radius: 2px;
+  /* Sharper Odoo style */
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  --header-height: 60px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--background-color);
+  color: var(--text-primary);
   line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
+/* Layout with detailed side borders */
+.layout {
   display: flex;
-  place-items: center;
-  min-width: 320px;
   min-height: 100vh;
+  flex-direction: column;
+  /* Grid Calligraphy Border Effect */
+  background-image:
+    linear-gradient(to right, #e5e7eb 1px, transparent 1px),
+    linear-gradient(to right, #e5e7eb 1px, transparent 1px);
+  background-position: 20px 0, calc(100% - 20px) 0;
+  background-size: 1px 100%;
+  background-repeat: no-repeat;
+  padding: 0 40px;
+  /* Space inside the borders */
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.15s;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  border: none;
+  font-family: inherit;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* Navbar */
+.navbar {
+  width: 100%;
+  height: 60px;
+  background-color: var(--primary-color);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow-sm);
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Cards */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  /* Flat and professional, no blur/glass needed for Odoo style */
+  box-shadow: var(--shadow-sm);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.glass-panel {
+  background: white;
+  border: 1px solid #1f2937;
+  /* Strong border as requested */
+  border-radius: var(--radius);
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 1.2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+  border: 1px solid transparent;
+  gap: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-secondary {
+  background-color: white;
+  border-color: #d1d5db;
+  color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+  background-color: #f8f9fa;
+  border-color: #9ca3af;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ced4da;
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+  background-color: #fff;
+  font-family: var(--font-main);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 1px var(--primary-color);
+}
+
+/* Badges */
+.badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.badge-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.badge-warning {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .layout {
+    padding: 0 10px;
+    background-position: 5px 0, calc(100% - 5px) 0;
   }
-  a:hover {
-    color: #747bff;
+
+  .main-content {
+    padding: 1rem;
+    width: 100%;
+    margin-top: 0;
   }
-  button {
-    background-color: #f9f9f9;
+
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 0.8rem 1rem;
+    gap: 0.5rem;
+  }
+
+  /* Hide desktop nav links by default in mobile, or adjust to be horizontal scrollable / bottom bar if preferred. 
+     For this implementation, let's keep them in navbar but scrollable or stacked if too many. */
+  .navbar nav {
+    margin-left: 0;
+    width: 100%;
+    overflow-x: auto;
+    /* Horizontal scroll for links */
+    padding-bottom: 5px;
+    order: 3;
+    /* Move links to bottom of navbar on mobile */
+  }
+
+  .navbar>div:first-child {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .navbar>div:nth-child(2) {
+    width: 100%;
+    justify-content: flex-end;
+    /* Align widgets to right */
+    margin-top: 0.5rem;
+  }
+
+  .card {
+    padding: 1rem;
+  }
+
+  /* Grid Views Reset */
+  .grid-view {
+    grid-template-columns: 1fr !important;
+    /* Stack cards */
+  }
+
+  h1 {
+    font-size: 1.5rem !important;
   }
 }
