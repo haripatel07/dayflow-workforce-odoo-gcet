@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Dayflow Logo](frontend/public/readme.png)
+![Dayflow Logo](docs/readme.png)
 
 **Every workday, perfectly aligned.**
 
