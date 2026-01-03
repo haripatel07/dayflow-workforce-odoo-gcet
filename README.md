@@ -369,15 +369,15 @@ POST   /api/chat                   # Send message
 
 ##  Screenshots
 
-> 📸 **All screenshots are from the actual running application**
+>  **All screenshots are from the actual running application**
 
-### 🏠 Landing Page
+###  Landing Page
 ![Landing Page](assets/06_landing_page.png)
 *Modern, professional landing page with clear value proposition*
 
 ---
 
-### 🔐 Authentication
+###  Authentication
 
 | Login | Sign Up |
 |:-----:|:-------:|
@@ -387,7 +387,7 @@ POST   /api/chat                   # Send message
 
 ---
 
-### 📊 Dashboard Views
+###  Dashboard Views
 
 **Admin Dashboard**
 ![Admin Dashboard](assets/01_admin_dashboard.png)
@@ -399,7 +399,7 @@ POST   /api/chat                   # Send message
 
 ---
 
-### 👥 Employee Management
+###  Employee Management
 
 **Employee Directory**
 ![Employee Directory](assets/05_employee_directory.png)
@@ -411,7 +411,7 @@ POST   /api/chat                   # Send message
 
 ---
 
-### ⏰ Attendance & Leave
+###  Attendance & Leave
 
 | Attendance Check-In | Leave Management |
 |:-------------------:|:----------------:|
@@ -421,7 +421,7 @@ POST   /api/chat                   # Send message
 
 ---
 
-### ⚙️ Backend API
+###  Backend API
 
 ![Backend API](assets/10_backend_api.png)
 *RESTful API with comprehensive endpoints for all HRMS operations*
