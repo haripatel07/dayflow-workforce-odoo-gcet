@@ -464,10 +464,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ##  Team
 
-**Project Lead:** Your Name  
-**Frontend Developer:** Your Name  
-**Backend Developer:** Your Name  
-**UI/UX Designer:** Your Name  
+| # | Name | Role |
+|---|------|------|
+| 1 | **Om Choksi** | Team Lead & Backend Developer |
+| 2 | **Hari Patel** | Frontend Developer |
+| 3 | **Dev Patel** | UI/UX & Database |
+| 4 | **Brijesh Rakhasiya** | API Integration & Testing |
 
 ---
 
