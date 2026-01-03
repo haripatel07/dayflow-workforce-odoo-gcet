@@ -69,24 +69,7 @@ const Home = () => {
                 <div style={{ position: 'absolute', bottom: '-10%', left: '-5%', width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(236,72,153,0.1) 0%, transparent 70%)', borderRadius: '50%', filter: 'blur(80px)' }}></div>
                 
                 <div style={{ maxWidth: '1000px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-                    <motion.div
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        style={{ 
-                            display: 'inline-flex', 
-                            alignItems: 'center', 
-                            gap: '0.5rem', 
-                            padding: '0.6rem 1.2rem', 
-                            background: '#f3e5f5',
-                            borderRadius: '24px', 
-                            fontWeight: '600', 
-                            marginBottom: '2.5rem', 
-                            fontSize: '0.9rem',
-                            color: 'var(--primary-color)'
-                        }}
-                    >
-                        <Sparkles size={16} /> Powered by AI • Open Source • Enterprise Ready
-                    </motion.div>
+                  
 
                     <motion.h1
                         initial={{ opacity: 0, y: 20 }}
@@ -273,25 +256,24 @@ const Home = () => {
                         <div>
                             <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '1rem' }}>Product</h4>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                                <a href="#" style={{ color: '#9ca3af', textDecoration: 'none' }}>Features</a>
-                                <a href="#" style={{ color: '#9ca3af', textDecoration: 'none' }}>Pricing</a>
-                                <a href="#" style={{ color: '#9ca3af', textDecoration: 'none' }}>Documentation</a>
+                                <Link to="/features" style={{ color: '#9ca3af', textDecoration: 'none' }}>Features</Link>
+                                <Link to="/pricing" style={{ color: '#9ca3af', textDecoration: 'none' }}>Pricing</Link>
+                                <Link to="/documentation" style={{ color: '#9ca3af', textDecoration: 'none' }}>Documentation</Link>
                             </div>
                         </div>
                         <div>
                             <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '1rem' }}>Company</h4>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                                <a href="#" style={{ color: '#9ca3af', textDecoration: 'none' }}>About Us</a>
-                                <a href="#" style={{ color: '#9ca3af', textDecoration: 'none' }}>Blog</a>
-                                <a href="#" style={{ color: '#9ca3af', textDecoration: 'none' }}>Contact</a>
+                                <Link to="/about" style={{ color: '#9ca3af', textDecoration: 'none' }}>About Us</Link>
+                                <Link to="/contact" style={{ color: '#9ca3af', textDecoration: 'none' }}>Contact</Link>
                             </div>
                         </div>
                         <div>
                             <h4 style={{ color: 'white', fontWeight: '600', marginBottom: '1rem' }}>Legal</h4>
                             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                                <a href="#" style={{ color: '#9ca3af', textDecoration: 'none' }}>Privacy Policy</a>
-                                <a href="#" style={{ color: '#9ca3af', textDecoration: 'none' }}>Terms of Service</a>
-                                <a href="#" style={{ color: '#9ca3af', textDecoration: 'none' }}>License</a>
+                                <Link to="/privacy" style={{ color: '#9ca3af', textDecoration: 'none' }}>Privacy Policy</Link>
+                                <Link to="/terms" style={{ color: '#9ca3af', textDecoration: 'none' }}>Terms of Service</Link>
+                                <Link to="/license" style={{ color: '#9ca3af', textDecoration: 'none' }}>License</Link>
                             </div>
                         </div>
                     </div>
