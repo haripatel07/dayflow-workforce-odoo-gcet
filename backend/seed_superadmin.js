@@ -1,12 +1,11 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcryptjs');
 const User = require('./models/User');
 require('dotenv').config();
 
 const createSuperAdmin = async () => {
     try {
         // Connect to MongoDB
-        await mongoose.connect(process.env.MONGO_URI);
+        await mongoose.connect(process.env.MONGODB_URI);
         console.log('MongoDB connected for SuperAdmin seeding...');
 
         // Check if SuperAdmin already exists
@@ -19,13 +18,10 @@ const createSuperAdmin = async () => {
         }
 
         // Create SuperAdmin user
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash('SuperAdmin@123', salt);
-
-        const superAdmin = await User.create({
+        const superAdmin = new User({
             name: 'Super Administrator',
             email: 'superadmin@dayflow.com',
-            password: hashedPassword,
+            password: 'SuperAdmin@123', // Will be hashed by pre-save hook
             role: 'SuperAdmin',
             empCode: 'SUPERADMIN001',
             companyName: 'Dayflow Platform',
@@ -36,6 +32,8 @@ const createSuperAdmin = async () => {
             nationality: 'Global',
             gender: 'Other'
         });
+        
+        await superAdmin.save();
 
         console.log('✅ SuperAdmin created successfully!');
         console.log('═══════════════════════════════════════════════════════════');
