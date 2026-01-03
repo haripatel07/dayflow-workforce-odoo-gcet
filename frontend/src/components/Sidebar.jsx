@@ -29,7 +29,7 @@ const Sidebar = () => {
     const handleCheckIn = async () => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.post('http://localhost:5000/api/attendance/checkin', {}, config);
+            await axios.post(`${API_URL}/api/attendance/checkin`, {}, config);
             fetchAttendanceStatus();
             setIsAttendanceOpen(false);
         } catch (error) {
@@ -40,7 +40,7 @@ const Sidebar = () => {
     const handleCheckOut = async () => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.post('http://localhost:5000/api/attendance/checkout', {}, config);
+            await axios.post(`${API_URL}/api/attendance/checkout`, {}, config);
             fetchAttendanceStatus();
             setIsAttendanceOpen(false);
         } catch (error) {

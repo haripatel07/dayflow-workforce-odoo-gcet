@@ -20,7 +20,7 @@ const Dashboard = () => {
         const fetchStats = async () => {
             try {
                 const config = { headers: { Authorization: `Bearer ${user.token}` } };
-                const { data } = await axios.get('http://localhost:5000/api/users/dashboard/stats', config);
+                const { data } = await axios.get(`${API_URL}/api/users/dashboard/stats`, config);
                 setStats(data);
             } catch (error) {
                 console.error("Error fetching stats:", error);
@@ -30,7 +30,7 @@ const Dashboard = () => {
         const fetchAnnouncements = async () => {
             try {
                 const config = { headers: { Authorization: `Bearer ${user.token}` } };
-                const { data } = await axios.get('http://localhost:5000/api/announcements', config);
+                const { data } = await axios.get(`${API_URL}/api/announcements`, config);
                 setAnnouncements(data);
             } catch (error) {
                 console.error("Error fetching announcements:", error);
@@ -45,7 +45,7 @@ const Dashboard = () => {
         e.preventDefault();
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.post('http://localhost:5000/api/announcements', newAnnouncement, config);
+            await axios.post(`${API_URL}/api/announcements`, newAnnouncement, config);
             setIsModalOpen(false);
             setNewAnnouncement({ title: '', message: '', type: 'info' });
             
@@ -61,7 +61,7 @@ const Dashboard = () => {
         if (!window.confirm('Delete this announcement?')) return;
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.delete(`http://localhost:5000/api/announcements/${id}`, config);
+            await axios.delete(`${API_URL}/api/announcements/${id}`, config);
             setAnnouncements(announcements.filter(a => a._id !== id));
         } catch (error) {
             alert('Failed to delete announcement');

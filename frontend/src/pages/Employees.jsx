@@ -23,7 +23,7 @@ const Employees = () => {
     const fetchEmployees = async () => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            const { data } = await axios.get('http://localhost:5000/api/users', config);
+            const { data } = await axios.get(`${API_URL}/api/users`, config);
 
             // Simulating Status for Visualization (Green Dot / Airplane / Yellow)
             // Real implementation would require aggregation in backend
@@ -70,7 +70,7 @@ const Employees = () => {
         e.preventDefault();
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            const res = await axios.post('http://localhost:5000/api/users/create', newEmp, config);
+            const res = await axios.post(`${API_URL}/api/users/create`, newEmp, config);
 
             alert(`Employee Created!\nTemp Password: ${res.data.tempPassword}\nPlease share this with the employee.`);
             setIsModalOpen(false);

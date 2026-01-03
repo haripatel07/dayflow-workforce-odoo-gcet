@@ -20,7 +20,7 @@ const Tasks = () => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
             const endpoint = user.role === 'Employee' ? '/api/tasks/my' : '/api/tasks';
-            const { data } = await axios.get(`http://localhost:5000${endpoint}`, config);
+            const { data } = await axios.get(`${API_URL}${endpoint}`, config);
             setTasks(data);
             setLoading(false);
         } catch (error) {
@@ -32,7 +32,7 @@ const Tasks = () => {
     const handleStatusUpdate = async (taskId, newStatus) => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.put(`http://localhost:5000/api/tasks/${taskId}`, { status: newStatus }, config);
+            await axios.put(`${API_URL}/api/tasks/${taskId}`, { status: newStatus }, config);
             fetchTasks();
         } catch (error) {
             alert(error.response?.data?.message || 'Failed to update task');
@@ -43,7 +43,7 @@ const Tasks = () => {
         if (!newComment.trim()) return;
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.post(`http://localhost:5000/api/tasks/${taskId}/comment`, { text: newComment }, config);
+            await axios.post(`${API_URL}/api/tasks/${taskId}/comment`, { text: newComment }, config);
             setNewComment('');
             fetchTasks();
         } catch (error) {

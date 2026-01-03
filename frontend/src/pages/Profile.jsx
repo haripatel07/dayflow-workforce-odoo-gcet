@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import AuthContext from "../context/AuthContext";
+import { API_URL } from "../config/api";
 import {
     User,
     Shield,
@@ -37,8 +38,8 @@ const Profile = () => {
 
             const endpoint =
                 id && user.role === "Admin"
-                    ? `http://localhost:5000/api/users/${id}`
-                    : "http://localhost:5000/api/users/profile";
+                    ? `${API_URL}/api/users/${id}`
+                    : `${API_URL}/api/users/profile`;
 
             const { data } = await axios.get(endpoint, config);
             setProfile(data);
@@ -56,8 +57,8 @@ const Profile = () => {
 
             const endpoint =
                 id && user.role === "Admin"
-                    ? `http://localhost:5000/api/users/${id}`
-                    : "http://localhost:5000/api/users/profile";
+                    ? `${API_URL}/api/users/${id}`
+                    : `${API_URL}/api/users/profile`;
 
             await axios.put(endpoint, formData, config);
             setIsEditing(false);

@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from 'react';
 import axios from 'axios';
+import { API_URL } from '../config/api';
 
 const AuthContext = createContext();
 
@@ -17,7 +18,7 @@ export const AuthProvider = ({ children }) => {
 
     const login = async (email, password) => {
         try {
-            const { data } = await axios.post('http://localhost:5000/api/users/login', { email, password });
+            const { data } = await axios.post(`${API_URL}/api/users/login`, { email, password });
             setUser(data);
             localStorage.setItem('userInfo', JSON.stringify(data));
             return { success: true };
@@ -39,7 +40,7 @@ export const AuthProvider = ({ children }) => {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
             // Use API to check open session specifically or parse from list
             // Ideally we create a specific status endpoint, but list works for now
-            const { data } = await axios.get('http://localhost:5000/api/attendance/my', config);
+            const { data } = await axios.get(`${API_URL}/api/attendance/my`, config);
 
             // Check if there is ANY open session (checkOut is null)
             const openSession = data.find(d => !d.checkOut);

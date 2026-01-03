@@ -2,6 +2,7 @@ import { useState, useRef, useEffect, useContext } from 'react';
 import { MessageSquare, X, Send, User, Bot } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import AuthContext from '../context/AuthContext';
+import { API_URL } from '../config/api';
 
 const Chatbot = () => {
     const { user } = useContext(AuthContext); // Get user directly from context
@@ -38,7 +39,7 @@ const Chatbot = () => {
 
         try {
             // Call Backend AI (RAG)
-            const res = await fetch('http://localhost:5000/api/chat', {
+            const res = await fetch(`${API_URL}/api/chat`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

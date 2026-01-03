@@ -59,7 +59,7 @@ const Leaves = () => {
 
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.post('http://localhost:5000/api/leaves', newLeave, config);
+            await axios.post(`${API_URL}/api/leaves`, newLeave, config);
             setIsModalOpen(false);
             setNewLeave({ type: 'Paid', startDate: '', endDate: '', reason: '' });
             fetchLeaves();
@@ -72,7 +72,7 @@ const Leaves = () => {
     const handleAction = async (id, status) => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.put(`http://localhost:5000/api/leaves/${id}`, { status }, config);
+            await axios.put(`${API_URL}/api/leaves/${id}`, { status }, config);
             fetchLeaves();
         } catch (error) {
             alert('Action failed');

@@ -14,7 +14,7 @@ const Attendance = () => {
     const fetchAttendance = async () => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            const { data } = await axios.get('http://localhost:5000/api/attendance/my', config);
+            const { data } = await axios.get(`${API_URL}/api/attendance/my`, config);
             setData(data);
 
             // Calculate mock stats based on data
@@ -37,7 +37,7 @@ const Attendance = () => {
     const handleCheckIn = async () => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.post('http://localhost:5000/api/attendance/checkin', {}, config);
+            await axios.post(`${API_URL}/api/attendance/checkin`, {}, config);
             fetchAttendance();
             fetchAttendanceStatus();
             setStatus('Checked In Successfully!');
@@ -51,7 +51,7 @@ const Attendance = () => {
     const handleCheckOut = async () => {
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.post('http://localhost:5000/api/attendance/checkout', {}, config);
+            await axios.post(`${API_URL}/api/attendance/checkout`, {}, config);
             fetchAttendance();
             fetchAttendanceStatus();
             setStatus('Checked Out Successfully!');

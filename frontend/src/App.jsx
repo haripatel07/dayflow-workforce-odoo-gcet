@@ -11,6 +11,14 @@ import Employees from './pages/Employees';
 import Attendance from './pages/Attendance';
 import Leaves from './pages/Leaves';
 import Tasks from './pages/Tasks';
+import Features from './pages/Features';
+import Pricing from './pages/Pricing';
+import Documentation from './pages/Documentation';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Privacy from './pages/Privacy';
+import Terms from './pages/Terms';
+import License from './pages/License';
 import Chatbot from './components/Chatbot';
 
 const ProtectedRoute = ({ children }) => {
@@ -49,6 +57,18 @@ function App() {
           <Route path="/" element={<PublicRoute><Home /></PublicRoute>} />
           <Route path="/login" element={<PublicRoute><Login /></PublicRoute>} />
           <Route path="/register" element={<PublicRoute><Register /></PublicRoute>} />
+          
+          {/* Public Pages */}
+          <Route path="/features" element={<Features />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/documentation" element={<Documentation />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/terms" element={<Terms />} />
+          <Route path="/license" element={<License />} />
+          
+          {/* Protected Routes */}
           <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
           <Route path="/employees" element={<ProtectedRoute><Employees /></ProtectedRoute>} />
           <Route path="/employees/:id" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
